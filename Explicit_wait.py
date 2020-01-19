@@ -28,9 +28,9 @@ driver.find_element(By.ID, "flight-returning-hp-flight").send_keys("05/02/2020")
 driver.find_element_by_xpath("//*[@id='gcw-flights-form-hp-flight']/div[7]/label/button").click()
 
 # EXPLICIT WAIT STATEMENTS
-wait = WebDriverWait(driver, 15)
+wait = WebDriverWait(driver, 15)  # 15 is max time
 non_stop_check_box = wait.until(expected_conditions.element_to_be_clickable((By.ID, "stopFilter_stops-0")))
 print(non_stop_check_box)
 non_stop_check_box.click()
 time.sleep(5)
-driver.close()
+driver.quit()
